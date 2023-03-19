@@ -1,0 +1,38 @@
+﻿@model TrevalTripProject.Models.Siniflar.Blog
+
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme Sayfası</h2>
+
+<br />
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ID)
+    @Html.ValidationMessageFor(x => x.ID, "", new { @style = "color:red" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.Baslik)
+    @Html.ValidationMessageFor(x => x.Baslik, "", new { @style = "color:red" })
+    @Html.TextBoxFor(x => x.Baslik, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Tarih)
+    @Html.ValidationMessageFor(x => x.Tarih, "", new { @style = "color:red" })
+    @Html.TextBoxFor(x => x.Tarih, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.BlogImage)
+    @Html.ValidationMessageFor(x => x.BlogImage, "", new { @style = "color:red" })
+
+    @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
+
+    @Html.TextAreaFor(x => x.Aciklama, 15,1, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning" type="submit">Güncelle</button>
+
+}
+

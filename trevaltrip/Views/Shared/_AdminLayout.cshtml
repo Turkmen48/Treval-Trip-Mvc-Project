@@ -1,0 +1,71 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row flex-nowrap">
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
+                    <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <span class="fs-5 d-none d-sm-inline">Menu</span>
+                    </a>
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                        <li class="nav-item">
+                            <a href="/Admin/Index" class="nav-link align-middle px-0">
+                                <i class="bi bi-bookmarks-fill" style="color:white;"></i> <span class="ms-1 d-none d-sm-inline" style="color:gainsboro;">Bloglar</span>
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a href="/Admin/YorumListesi" class="nav-link px-0 align-middle">
+                                <i class="bi bi-alexa" style="color:white;"></i> <span class="ms-1 d-none d-sm-inline" style="color:gainsboro;"  >Yorumlar</span>
+                            </a>
+                        </li>
+                      
+                        <li>
+                            <a href="/Admin/Iletisim"  class="nav-link px-0 align-middle">
+                                <i class="bi bi-people-fill " style="color:white;"></i> <span class="ms-1 d-none d-sm-inline" style="color:gainsboro;">İletişim</span>
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="/Admin/Hakkimizda" class="nav-link px-0 align-middle">
+                                <i class="bi bi-pencil-square"style="color:white;"></i> <span class="ms-1 d-none d-sm-inline" style="color:gainsboro;">Hakkımızda</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <div class="dropdown pb-4">
+                        <a href="https://github.com/Turkmen48"><img src="https://avatars.githubusercontent.com/u/45080586?v=4" alt="hugenerd" width="30" height="30" class="rounded-circle"></a>
+                        <span class="d-none d-sm-inline mx-1"><a href="https://github.com/Turkmen48" style="color:white; text-decoration:none; ">Enes</a></span>
+                        <a href="/Admin/LogOut">
+                            <i class="bi bi-sign-turn-right-fill" style="color:white;"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col py-3">
+              @RenderBody()
+            </div>
+        </div>
+    </div>
+
+    <!-- Script-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+﻿@using TrevalTripProject.Models.Siniflar
+@model List<Blog>
+@{
+    Layout = null;
+}
+
+<div class="padding">
+    <h4>Haftalık En Beğenilenler</h4>
+    <ul class="list list-pad">
+        @{int i = 1;}
+        @foreach (var b in Model)
+        {
+
+            <li class="list-bg"><span>@i. @{i++;}</span><a href="/Blog/BlogDetay/@b.ID">@b.Baslik</a></li>
+            
+          
+        }
+    </ul>
+    <a href="/Blog/Index" class="link1">Tüm Blogları Gör</a>
+</div>
+

@@ -1,0 +1,25 @@
+﻿@using TrevalTripProject.Models.Siniflar
+@model List<Blog>
+@{
+    Layout = null;
+}
+
+<div class="padding1">
+    <h4>En Sevdiğimiz Yazılar</h4>
+    <div class="box-left">
+
+        @foreach (var b in Model)
+        {
+            <div class="bot-img">
+                <a href="/Blog/BlogDetay/@b.ID"><img src="@b.BlogImage" alt="" /></a>
+            </div>
+            <div class="bot-desc">
+                <p>@b.Aciklama.Substring(0,83) </p>
+            </div>
+            <div class="clear"></div>
+        }
+
+    </div>
+    @Html.Action("Partial5","Default")
+</div>
+

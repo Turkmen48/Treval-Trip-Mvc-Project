@@ -1,0 +1,60 @@
+﻿@using TrevalTripProject.Models.Siniflar
+@model List<Blog>
+@{
+    ViewBag.Title = "Admin";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2 style="margin-top:15px;">Blog Listesi</h2>
+
+<br />
+
+<table id="tableblogs" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                ID
+            </th>
+            <th>
+                BAŞLIK
+            </th>
+            <th>
+                SİL
+            </th>
+            <th>
+                GUNCELLE
+            </th>
+            <th>
+                DETAYLAR
+            </th>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var b in Model)
+        {
+            <tr>
+                <td>@b.ID</td>
+                <td>@b.Baslik</td>
+                <td>@Html.ActionLink("Sil", "BlogSil", new { id = b.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Gerçekten silmek istiyor musunuz?')" })</td>
+                <td><a href="/Admin/BlogGetir/@b.ID" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="#" class="btn btn-outline-dark">Detaylar</a></td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Admin/YeniBlog/" class="btn btn-primary"> Yeni Blog Ekle</a>
+<link href="https://cdn.datatables.net/v/bs5/jq-3.6.0/dt-1.13.4/datatables.min.css" rel="stylesheet" />
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js">
+
+</script>
+<script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $('#tableblogs').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+        }
+    });
+</script>

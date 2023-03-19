@@ -1,0 +1,26 @@
+﻿@using TrevalTripProject.Models.Siniflar
+
+@model List<Hakkimizda> 
+
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="content">
+    <div class="wrap">
+        <div class="about">
+            <h3>Hakkımızda</h3>
+            @foreach (var hakkimizda in Model)
+            {
+                <img src="@hakkimizda.FotoUrl" alt="japan" width="1000" height="200" />
+                <p>
+
+                    @hakkimizda.Aciklama
+                    
+                </p>
+            }
+            </div>
+    </div>
+</div>
+

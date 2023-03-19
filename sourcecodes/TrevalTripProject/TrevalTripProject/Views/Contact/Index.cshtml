@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "İletişim";
+    Layout = "~/Views/Shared/_TestLayout.cshtml";
+}
+
+<div class="contact">
+    <div class="wrap">
+        <div class="contact-top">
+            <h3>İletişim Formu</h3>
+            <p> Lütfen bizimle irtibata geçmekten çekinmeyin.</p>
+        </div>
+        <div class="contact-bottom">
+            <div class="contact-left">
+                <div class="contact-add">
+                    <h3>Adres</h3>
+                    <p> Atatürk mahallesi Mareşal Sokak Paşa Apartman No:81 Gebze/Kocaeli </p>
+                    <p>Telefon:+90-506-177-45-32</p>
+                    <p>Fax:1-22-5555</p>
+                    <p>Email:<a href="mailto:admin@gmail.com">admin@mail.com</a></p>
+                </div>
+
+            </div>
+
+            <div class="clear"></div>
+        </div>
+
+        <div class="form">
+            @using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+            {
+                <div>
+                    <input type="text" class="textbox" name="AdSoyad" placeholder="Ad Soyad:" required>
+                </div>
+                <div>
+                    <input type="text" class="textbox" name="Mail" placeholder="Mail:" required>
+                </div>
+                <div>
+                    <input type="text" class="textbox" name="Konu" placeholder="Konu:" required>
+                </div>
+
+                <div class="form1"> <textarea name="Mesaj" placeholder="Mesaj:" required></textarea> </div>
+                <div>
+                    <button type="submit" class="read">Gönder</button>
+                </div>
+            }
+        </div>
+
+    </div>
+        <div class="clear"></div>
+        <div class="clear"></div>
+    </div>
+</div>
+

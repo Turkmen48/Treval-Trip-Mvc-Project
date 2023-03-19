@@ -1,0 +1,25 @@
+﻿@model TrevalTripProject.Models.Siniflar.Hakkimizda
+@{
+    ViewBag.Title = "Hakkimizda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Hakkimizda Bölümü</h2>
+
+<form class="form-group" method="post">
+
+    @Html.LabelFor(x => x.ID)
+    @Html.ValidationMessageFor(x => x.ID, "", new { @style = "color:red" })
+    @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    <br />
+    @Html.LabelFor(x => x.FotoUrl)
+    @Html.ValidationMessageFor(x => x.FotoUrl, "", new { @style = "color:red" })
+    @Html.TextBoxFor(x => x.FotoUrl, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(x => x.Aciklama)
+    @Html.ValidationMessageFor(x => x.Aciklama, "", new { @style = "color:red" })
+
+    @Html.TextAreaFor(x => x.Aciklama,10,2, new { @class = "form-control" })
+    <br />
+    <button class="btn btn-warning" type="submit">Güncelle</button>
+</form>
